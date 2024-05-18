@@ -94,7 +94,7 @@ The main script was designed to:
     * **Two List Path:** Used for scenarios with both street address and zip code query results. This path involved:
         * Compatibility check between street and zip code addresses.
         * Joining queries if compatibility check failed.
-        * Using the zip code list for geocoding as a last resort (due to higher reliability based on testing).
+        * Using the zip code query list over street query list(due to higher reliability based on testing) for geocoding as a last resort.
 5. If an address was found on a separate webpage (e.g., contact page), the script would attempt to locate that page and process it as well.
 
 ##  Results
