@@ -44,7 +44,7 @@ After some testing and deliberation, I decided the best approach is to search th
 
 I did some tests to refine the regex patterns and was pretty happy with the results, but...
 
-###  Data Transformation and Validation
+##  Data Transformation and Validation
 
 How do I transform these strings from websites into the address format that I want, and how do I know if the address found is actually a valid address? 
 
@@ -69,7 +69,7 @@ But... what if, in these queries I already have, I can search with regex pattern
 
 So I came up with this [algorithm](https://github.com/cristiol/Address-extraction-project/blob/main/extraction_algorithm/geopy_validation.).
 
-###  Handling Multiple Addresses
+##  Handling Multiple Addresses
 
 So far, so good, but another problem: what if there are many addresses? How do I know which is which?
 
@@ -82,7 +82,7 @@ First the compability test, and then the joining queries method if the first fai
 
 I did some more testing and made some touches here and there, and now it's time to design the main script and find the best way to maximize the result.
 
-###  Main Script Design
+##  Main Script Design
 
 The main script was designed to:
 
@@ -97,20 +97,76 @@ The main script was designed to:
         * Using the zip code list for geocoding as a last resort (due to higher reliability based on testing).
 5. If an address was found on a separate webpage (e.g., contact page), the script would attempt to locate that page and process it as well.
 
-###  Results
+##  Results
 
 * From 2479 URLs, addresses were successfully extracted from 965 (38.92%), yielding a total of 1171 addresses.
 
-###  Potential Issues
+##  Potential Issues
 
 * Limitations of regex for handling edge cases and non-English addresses.
 * Potential for false positives due to the use of regex.
 * Increased processing time associated with Geopy usage.
 
-###  Future Improvements
+##  Future Improvements
 
 * Of course, the result can be improved, but I think to maximize efficiency, a mixed approach between traditional rule-based regex and some machine learning algorithms is needed.
 
-###  Conclusion
+##  Conclusion
 
 Overall, I am very happy with the result, and confidently, I can say that I made a project of which I am proud.
+
+# Installation
+
+### Prerequisites
+
+Ensure you have Python 3.6 or higher and Pip installed on your system. You can download Python from the official website: [https://www.python.org/downloads/](https://www.python.org/downloads/).
+
+**Installing Pip:**
+
+If you don't have Pip installed, you can usually install it using the following command in your terminal:
+
+```bash
+python3 -m ensurepip --upgrade
+```
+
+### Install Dependencies
+
+Once you have Python and Pip set up, you can install the required libraries by running the following command in your terminal:
+
+```bash
+pip install -r requirements.txt
+```
+
+This command will install the necessary dependencies listed in a file named `requirements.txt`. This file typically specifies libraries like BeautifulSoup4 for parsing HTML content and Geopy for geocoding addresses.
+
+
+### Run the Program
+
+```bash
+python main_script.py
+```
+
+## Output
+
+The program generates a JSON file named `output.json` containing the extracted addresses. Each address is represented as a JSON object with the following fields:
+
+* **country:** The country code (e.g., "US", "UK").
+* **region:** The administrative region (e.g., "California", "London"). (This may not always be available)
+* **state:** The state or province  (This may not always be available depending on the address format)
+* **city:** The city or town.
+* **postcode:** The postal code or ZIP code.
+* **street:** The street name.
+* **street_number:** The street number.
+
+## Example Output
+
+<p align="center">
+  <img src="https://github.com/cristiol/Address-extraction-project/assets/142798921/4554aa99-b56c-494b-9213-ff0fbe347bad">
+</p>
+
+
+
+
+
+
+
