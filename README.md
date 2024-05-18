@@ -99,7 +99,7 @@ The main script was designed to:
 
 ##  Results
 
-* From 2479 URLs, addresses were successfully extracted from 965 (38.92%), yielding a total of 1171 addresses.
+* From **2479** URLs, addresses were successfully extracted from **965 (38.92%)**, yielding a total of **1171** addresses.
 
 ##  Potential Issues
 
