@@ -71,7 +71,7 @@ def get_address(link, recursion_count=0):
 
 
 # with concurrent.futures.ThreadPoolExecutor() as executor:
-#    results = list(executor.map(get_address, links[250:300]))
+#    results = list(executor.map(get_address, links[:3]))
 
 # for link in links[:3]:
 #     get_address(link)
