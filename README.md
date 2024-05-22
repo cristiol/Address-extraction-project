@@ -23,12 +23,12 @@ Based on the analysis, I decided to go for the regex approach, confident that I 
 
 ##  Regular Expression Development
 
-By taking a random website, the most likely address found is one from the US, then from the UK, then from Germany, and so on and so forth. I decided to make four regex patterns:
+By taking a random website, the most likely address found is one from the US, then from the UK, then from Germany, and so on and so forth. I decided to make four [regex patterns](https://github.com/cristiol/Address-extraction-project/blob/main/extraction_algorithm/regex_patterns.py):
 
-* Street addresses
-* US zip codes
-* UK zip codes
-* Regular zip codes (for broader coverage)
+* **Street addresses** matches strings that contain a number, a street name, and a street type (e.g., 503 Maurice Street).
+* **US zip codes** matches strings that contain a state name or abbreviation, a 5-digit number (e.g., NC 28112).
+* **UK zip codes** matches strings that contain a pattern with one or two letters, followed by one or two digits, and optionally another letter, a mandatory space, or a single digit followed by two letters. (e.g., SW9 0FQ)
+* **Regular zip codes** (for broader coverage) matches strings that contain groups of 5 digits (e.g., 28112).
 
 ##  Website Content Search Strategy
 
@@ -55,7 +55,12 @@ However, limitations of Geopy were identified, such as:
 * Reduced accuracy for street-only or simple zip code queries.
 * Performance limitations due to inherent processing overhead.
 
-But at least I have the certainty that I will receive valid addresses that actually exist. 
+But at least I have the certainty that I will receive valid addresses that actually exist and in a format I can work with.
+
+(example of format)
+<p align="center">
+  <img src="https://github.com/cristiol/Address-extraction-project/assets/142798921/0f7f0bae-cacb-4724-a6bc-0f4022fb8b8f">
+</p>
 
 ##  Maximizing Accuracy with Geopy
 
