@@ -72,7 +72,7 @@ But I notice something: when I query Geopy, I can set the country code, and then
 
 But... what if, in these queries I already have, I can search with regex patterns I already have, and then if there is a match, it must be that country, right?
 
-So I came up with this [algorithm](https://github.com/cristiol/Address-extraction-project/blob/main/extraction_algorithm/geopy_validation.).
+So I came up with this [algorithm](https://github.com/cristiol/Address-extraction-project/blob/main/extraction_algorithm/geopy_validation.py).
 
 ##  Handling Multiple Addresses
 
